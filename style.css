@@ -1,0 +1,108 @@
+body {
+    font-family: "Lato", sans-serif;
+}
+
+#nav {
+  font-size: 18px;
+  background: #f44336;
+  overflow: hidden;
+  color: white;
+  border: none;
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),  0 2px 5px 0 rgba(0,0,0,0.12);
+}
+#nav a{
+  float: left;
+  text-decoration: none;
+  text-align: center;
+  font-size: 18px;
+  color: white;
+  padding: 12px 24px;
+  margin:0px;
+}
+
+#nav a:hover{
+  background: white;
+  color: black;
+}
+
+#nav a.active{
+  background: white;
+  color: black;
+}
+
+.title {
+  padding-left: 20px;
+  margin: 0px;
+}
+
+.symptoms{
+  display: flex;
+}
+
+.column {
+  width: 50%;
+  margin-left: 20px;
+}
+
+.average {
+  text-align: left;
+  padding: 0px 20px 10px 20px;
+  width: 100%;
+}
+
+.average p {
+  margin: 0px;
+}
+
+.flex-container {
+  display: flex;
+  margin-top: 20px;
+}
+
+.flex-symps {
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    height: auto;
+    padding: 10px;
+}
+
+.flex-symps:first-child {
+    justify-content: center;
+    margin: 0px 20px 0px 20px;
+}
+
+.flex-symps:last-child {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-right: 20px;
+  font-size: 20px;
+}
+
+.check {
+  display: inline-block;
+  height: 250px;
+  width: 200px;
+  margin: 10px;
+  padding: 10px;
+  border: 3px solid #f44336;
+  border-radius: 3px;
+}
+
+.symp-contents {
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+
+.symp-image-container img {
+  max-height: 150px;
+  max-width: 100px;
+  margin-bottom: 5px;
+}
