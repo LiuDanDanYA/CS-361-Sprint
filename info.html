@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>COVIDCoach</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="style.css">
+
+<body>
+
+<!-- Navbar -->
+<header>
+  <div id="nav">
+      <a href="index.html">Home</a>
+      <a class="active" href="info.html">Info</a>
+      <a href="#">News</a>
+      <a href="#">Friend</a>
+      <a href="#">Profile</a>
+  </div>
+</header>
+
+  <h1 class="title">Symptoms</h1>
+<div class="symptoms">
+  <div class="column">
+    <h3>Common:</h3>
+    <ul>
+      <li>Fever</li>
+      <li>Tiredness</li>
+      <li>Dry cough</li>
+    </ul>
+  </div>
+  <div class="column">
+    <h3>May Experience:</h3>
+    <ul>
+    <li>Aches and pains</li>
+    <li>Nasal congestion</li>
+    <li>Runny nose</li>
+    <li>Sore throat</li>
+    <li>Diarrhoea</li>
+    </ul>
+  </div>
+</div>
+<div class="average">
+  <p>On average it takes 5-6 days from when someone is infected with the virus for symptoms to show, however it can take up to 14 days.</p>
+  <p>People with mild symptoms who are otherwise healthy should self-isolate. Seek medical Attention if you have a fever, cough, and difficulty breathing.</p>
+</div>
+<div class="flex-container">
+  <div class="flex-symps">
+    <div class="check">
+      <div class="symp-contents">
+        <div class="symp-image-container">
+          <img src="images/fever.png">
+        </div>
+        <div class="symp-info-container">
+          <input type="checkbox" id="fever" name="fever">
+          <label for="fever"> Fever</label>
+        </div>
+      </div>
+    </div>
+    <div class="check">
+      <div class="symp-contents">
+        <div class="symp-image-container">
+          <img src="images/tired.png">
+        </div>
+        <div class="symp-info-container">
+          <input type="checkbox" id="tiredness" name="tiredness">
+          <label for="tiredness"> Tiredness</label>
+        </div>
+      </div>
+    </div>
+    <div class="check">
+      <div class="symp-contents">
+        <div class="symp-image-container">
+          <img src="images/cough.png">
+        </div>
+        <div class="symp-info-container">
+          <input type="checkbox" id="cough" name="cough">
+          <label for="cough"> Dry Cough</label>
+        </div>
+      </div>
+    </div>
+    <div class="check">
+      <div class="symp-contents">
+        <div class="symp-image-container">
+          <img src="images/ache.png">
+        </div>
+        <div class="symp-info-container">
+          <input type="checkbox" id="ache" name="ache">
+          <label for="ache"> Aches and Pains</label>
+        </div>
+      </div>
+    </div>
+    <div class="check">
+      <div class="symp-contents">
+        <div class="symp-image-container">
+          <img src="images/nasal.PNG">
+        </div>
+        <div class="symp-info-container">
+          <input type="checkbox" id="nasal" name="nasal">
+          <label for="nasal"> Nasal Congestion</label>
+        </div>
+      </div>
+    </div>
+    <div class="check">
+      <div class="symp-contents">
+        <div class="symp-image-container">
+          <img src="images/runny.png">
+        </div>
+        <div class="symp-info-container">
+          <input type="checkbox" id="runny" name="runny">
+          <label for="runny"> Runny Nose</label>
+        </div>
+      </div>
+    </div>
+    <div class="check">
+      <div class="symp-contents">
+        <div class="symp-image-container">
+          <img src="images/sore.png">
+        </div>
+        <div class="symp-info-container">
+          <input type="checkbox" id="sore" name="sore">
+          <label for="sore"> Sore Throat</label>
+        </div>
+      </div>
+    </div>
+    <div class="check">
+      <div class="symp-contents">
+        <div class="symp-image-container">
+          <img src="images/dia.png">
+        </div>
+        <div class="symp-info-container">
+          <input type="checkbox" id="diarrhoea" name="diarrhoea">
+          <label for="diarrhoea"> Diarrhoea</label>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="flex-symps">
+    <p>You have 0 symptoms, you do not need to stay home or seek medical attention.</p>
+    <p hidden>You have 1 or more symptoms you should stay home!</p>
+  </div>
+</div>
+</body>
