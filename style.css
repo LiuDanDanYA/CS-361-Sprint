@@ -106,3 +106,101 @@ body {
   max-width: 100px;
   margin-bottom: 5px;
 }
+
+/* begin styles for RSS Feed */
+.newsFlex {
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+}
+
+
+.rss-box {
+	 margin: 1em;
+	 width: 500px;
+	 background-color: #f44336;
+
+}
+.rss-items {
+	margin-top:0px;
+	padding:0.5em; 0.5em;
+	margin-left:0px;
+	color:#000000;
+}
+p.rss-title {
+  padding:0.5em;
+}
+
+.rss-title {
+	text-decoration: none;
+	font-size: 16px;
+	background-color:#f44336;
+	color:#000000;
+	font-weight:bold;
+	margin: 0px;
+	padding:0px;
+	text-align: center;
+}
+
+.rss-title a:hover {
+  color: white;
+}
+
+.rss-item  {
+  font-size: 12px;
+  font-weight : normal;
+  list-style:none;
+  padding-bottom:1em;
+}
+
+.rss-item a {
+	text-decoration : none;
+	color: #FFFFFF;
+	font-size: 14px;
+	font-weight:bold;
+	}
+
+.rss-item a:visited {
+	color:white;
+}
+
+.rss-item a:hover {
+	color: black;
+}
+
+.rss-date {
+	font-size: 85%;
+	font-weight : normal;
+	color: #fff;
+	}
+/* buttons modeled from http://www.wellstyled.com/css-inline-buttons.html */
+
+.pod-play {
+   _width:12em;
+   margin: 0 0.2em; padding: 0.1em 0; _padding:0;
+
+   white-space:nowrap;
+   text-decoration: none;
+   vertical-align:middle;
+   background: #fb6;
+   color: black;
+   }
+.pod-play em {
+   _width:1em; _cursor:hand;
+   font-style: normal;
+   margin:0; padding: 0.1em 0.5em;
+   background: white;
+   color: #222;
+   }
+.pod-play span {
+   _width:1em; _cursor:hand;
+   margin:0; padding: 0.1em 0.5em 0.1em 0.3em;
+   }
+.pod-play:hover {
+   background: #666;
+   color: white;
+   }
+.pod-play:hover em {
+   background: black;
+   color: white
+   }
