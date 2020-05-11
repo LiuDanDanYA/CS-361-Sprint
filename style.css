@@ -134,6 +134,18 @@ body {
   text-align: center;
 }
 
+#map{
+	width: 900px;
+  max-width: 100%;
+	height: 200px;
+  margin-left: 20px;
+}
+
+.mapDesc {
+  text-size: 16px;
+  margin: 20px;
+}
+
 /* begin styles for RSS Feed */
 .newsFlex {
   display: flex;
