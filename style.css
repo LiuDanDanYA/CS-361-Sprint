@@ -10,22 +10,15 @@ body {
   border: none;
   box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),  0 2px 5px 0 rgba(0,0,0,0.12);
 }
+
 #nav a{
   float: left;
   text-decoration: none;
   text-align: center;
-  font-size: 18px;
-  color: white;
   padding: 12px 24px;
-  margin:0px;
 }
 
-#nav a:hover{
-  background: white;
-  color: black;
-}
-
-#nav a.active{
+#nav a:hover, #nav a.active {
   background: white;
   color: black;
 }
@@ -139,7 +132,7 @@ body {
 }
 
 .mapDesc {
-  text-size: 16px;
+  font-size: 16px;
   margin: 20px;
 }
 
@@ -155,33 +148,26 @@ body {
   right: 20px;
   top: 75px;
   max-width:100%;
-  height: 309px;
+  height: 300px;
 }
 
 .rss-box {
-	 margin: 1em;
+	 margin: 16px;
 	 width: 500px;
 	 background-color: #f44336;
 
 }
 .rss-items {
-	margin-top:0px;
-	padding:0.5em; 0.5em;
-	margin-left:0px;
-	color:#000000;
-}
-p.rss-title {
-  padding:0.5em;
+	margin-top: 0px;
+	padding: 8px;
 }
 
 .rss-title {
 	text-decoration: none;
 	font-size: 16px;
-	background-color:#f44336;
-	color:#000000;
-	font-weight:bold;
+	font-weight: bold;
 	margin: 0px;
-	padding:0px;
+	padding: 0px;
 	text-align: center;
 }
 
@@ -191,13 +177,13 @@ p.rss-title {
 
 .rss-item  {
   font-size: 12px;
-  font-weight : normal;
-  list-style:none;
-  padding-bottom:1em;
+  font-weight: normal;
+  list-style: none;
+  padding-bottom: 16px;
 }
 
 .rss-item a {
-	text-decoration : none;
+	text-decoration: none;
 	color: #FFFFFF;
 	font-size: 14px;
 	font-weight:bold;
@@ -212,16 +198,14 @@ p.rss-title {
 }
 
 .rss-date {
-	font-size: 85%;
-	font-weight : normal;
-	color: #fff;
+	font-size: 14px;
+	color: #FFFFFF;
 	}
 /* buttons modeled from http://www.wellstyled.com/css-inline-buttons.html */
 
 .pod-play {
-   _width:12em;
-   margin: 0 0.2em; padding: 0.1em 0; _padding:0;
-
+   _width:12px;
+   margin: 0px 3.2px; padding: 1.6px 0px; _padding:0px;
    white-space:nowrap;
    text-decoration: none;
    vertical-align:middle;
@@ -229,15 +213,17 @@ p.rss-title {
    color: black;
    }
 .pod-play em {
-   _width:1em; _cursor:hand;
+   _width:16px;
+   _cursor:hand;
    font-style: normal;
-   margin:0; padding: 0.1em 0.5em;
+   margin:0; padding: 1.6px ;
    background: white;
    color: #222;
    }
 .pod-play span {
-   _width:1em; _cursor:hand;
-   margin:0; padding: 0.1em 0.5em 0.1em 0.3em;
+   _width:16px;
+   _cursor:hand;
+   margin:0; padding: 1.6px 8px 1.6px 4.8px;
    }
 .pod-play:hover {
    background: #666;
