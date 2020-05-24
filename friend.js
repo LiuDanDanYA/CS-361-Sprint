@@ -36,8 +36,9 @@ function addNewFriend() {
   var aEmail = document.getElementById('email').value.trim();
   var aStat = document.getElementById('status');
   var opt = aStat.options[aStat.selectedIndex];
-  var phone = "1234567890";
+
   aTele = aTele.replace(/(\d{3})(\d{3})(\d+)/, '$1-$2-$3');
+
   var row = table.insertRow(-1);
   var cell1 = row.insertCell(0);
   var cell2 = row.insertCell(1);
@@ -83,3 +84,24 @@ function validateEmail(elementValue){
    var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
    return emailPattern.test(elementValue);
  }
+ var UserID = "Ericdf";
+
+ var Singleton = (function () {
+     var instance;
+
+     function createInstance() {
+         var object = new Object(UserID);
+         return object;
+     }
+
+     return {
+         getInstance: function () {
+             if (!instance) {
+                 instance = createInstance();
+             }
+             return instance;
+         }
+     };
+ })();
+
+ console.log(Singleton.getInstance());
