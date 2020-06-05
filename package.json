@@ -1,0 +1,26 @@
+{
+  "name": "cs-361-sprint",
+  "version": "1.0.0",
+  "description": "Team 33 KKB \r Team member: Xinpeng Liu\r              Yue Xu\r              Zhaoxiang Lai\r              Dongyi Sun\r              Eric Hoang",
+  "main": "TestCommit.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LiuDanDanYA/CS-361-Sprint.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LiuDanDanYA/CS-361-Sprint/issues"
+  },
+  "homepage": "https://github.com/LiuDanDanYA/CS-361-Sprint#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-handlebars": "^4.0.4",
+    "express-session": "^1.17.1",
+    "handlebars": "^4.7.6",
+    "mysql": "^2.18.1"
+  }
+}
