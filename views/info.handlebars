@@ -1,0 +1,202 @@
+{{>header}}
+
+<style>
+#map{
+  width: 900px;
+  max-width: 100%;
+  height: 500px;
+}
+</style>
+<h1 class="title">Symptoms</h1>
+<div class="symptoms">
+<div class="column">
+  <h3>Common:</h3>
+  <ul>
+    <li>Fever</li>
+    <li>Tiredness</li>
+    <li>Dry cough</li>
+  </ul>
+</div>
+<div class="column">
+  <h3>May Experience:</h3>
+  <ul>
+  <li>Aches and pains</li>
+  <li>Nasal congestion</li>
+  <li>Runny nose</li>
+  <li>Sore throat</li>
+  <li>Diarrhoea</li>
+  </ul>
+</div>
+</div>
+<div class="average">
+<p>On average it takes 5-6 days from when someone is infected with the virus for symptoms to show, however it can take up to 14 days.</p>
+<p>People with mild symptoms who are otherwise healthy should self-isolate. Seek medical Attention if you have a fever, cough, and difficulty breathing.</p>
+</div>
+<div class="flex-container">
+<div class="flex-symps">
+  <div class="check">
+    <div class="symp-contents">
+      <div class="symp-image-container">
+        <img src="images/fever.png">
+      </div>
+      <div class="symp-info-container">
+        <input type="checkbox" id="fever" name="fever">
+        <label for="fever"> Fever</label>
+      </div>
+    </div>
+  </div>
+  <div class="check">
+    <div class="symp-contents">
+      <div class="symp-image-container">
+        <img src="images/tired.png">
+      </div>
+      <div class="symp-info-container">
+        <input type="checkbox" id="tiredness" name="tiredness">
+        <label for="tiredness"> Tiredness</label>
+      </div>
+    </div>
+  </div>
+  <div class="check">
+    <div class="symp-contents">
+      <div class="symp-image-container">
+        <img src="images/cough.png">
+      </div>
+      <div class="symp-info-container">
+        <input type="checkbox" id="cough" name="cough">
+        <label for="cough"> Dry Cough</label>
+      </div>
+    </div>
+  </div>
+  <div class="check">
+    <div class="symp-contents">
+      <div class="symp-image-container">
+        <img src="images/ache.png">
+      </div>
+      <div class="symp-info-container">
+        <input type="checkbox" id="ache" name="ache">
+        <label for="ache"> Aches and Pains</label>
+      </div>
+    </div>
+  </div>
+  <div class="check">
+    <div class="symp-contents">
+      <div class="symp-image-container">
+        <img src="images/nasal.PNG">
+      </div>
+      <div class="symp-info-container">
+        <input type="checkbox" id="nasal" name="nasal">
+        <label for="nasal"> Nasal Congestion</label>
+      </div>
+    </div>
+  </div>
+  <div class="check">
+    <div class="symp-contents">
+      <div class="symp-image-container">
+        <img src="images/runny.png">
+      </div>
+      <div class="symp-info-container">
+        <input type="checkbox" id="runny" name="runny">
+        <label for="runny"> Runny Nose</label>
+      </div>
+    </div>
+  </div>
+  <div class="check">
+    <div class="symp-contents">
+      <div class="symp-image-container">
+        <img src="images/sore.png">
+      </div>
+      <div class="symp-info-container">
+        <input type="checkbox" id="sore" name="sore">
+        <label for="sore"> Sore Throat</label>
+      </div>
+    </div>
+  </div>
+  <div class="check">
+    <div class="symp-contents">
+      <div class="symp-image-container">
+        <img src="images/dia.png">
+      </div>
+      <div class="symp-info-container">
+        <input type="checkbox" id="diarrhoea" name="diarrhoea">
+        <label for="diarrhoea"> Diarrhoea</label>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="flex-symps">
+  <p>You have 0 symptoms, you do not need to stay home or seek medical attention.</p>
+  <p hidden>You have 1 or more symptoms you should stay home!</p>
+</div>
+</div>
+
+<div class="mapDesc">
+<span>Nearest Stores In Your Area</span>
+</div>
+
+<div id="map"></div>
+<div id="info_div"></div>
+<script>
+function initMap() {
+var myMapCenter = {lat: 44.5646, lng: -123.2620};
+
+// Create a map object and specify the DOM element for display.
+var map = new google.maps.Map(document.getElementById('map'), {
+  center: myMapCenter,
+  zoom: 14
+});
+
+
+function markStore(storeInfo){
+
+  // Create a marker and set its position.
+  var marker = new google.maps.Marker({
+    map: map,
+    position: storeInfo.location,
+    title: storeInfo.name
+  });
+
+  // show store info when marker is clicked
+  marker.addListener('click', function(){
+    showStoreInfo(storeInfo);
+  });
+}
+
+// show store info in text box
+function showStoreInfo(storeInfo){
+  var info_div = document.getElementById('info_div');
+  info_div.innerHTML = 'Store name: '
+    + storeInfo.name
+    + '<br>Hours: ' + storeInfo.hours;
+}
+
+var stores = [
+  {
+    name: 'Winco',
+    location: {lat: 44.5906, lng: -123.2743},
+    hours: '8AM to 10PM'
+  },
+  {
+    name: 'Fred Meyers',
+    location: {lat: 44.5752, lng: -123.2747},
+    hours: '9AM to 9PM'
+  }
+  /*{
+    name: 'Safeway',
+    location: {lat: 44.5610, lng: -123.2637},
+    hours: '9AM to 9PM'
+  }
+  {
+    name: 'Safeway',
+    location: {lat: 44.551640, lng: -123.308360},
+    hours: '9AM to 9PM'
+  }*/
+];
+
+stores.forEach(function(store){
+  markStore(store);
+});
+
+}
+</script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDFuvUatthv9xv-Y0i5FdXyIYkLgzNsix0&callback=initMap" async defer></script>
