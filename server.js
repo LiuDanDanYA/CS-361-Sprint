@@ -19,7 +19,8 @@ var connection = mysql.createConnection({
   host: "classmysql.engr.oregonstate.edu",
   user: "cs340_hoanger",
   password: "Ironman1",
-  database : 'cs340_hoanger'
+  database : 'cs340_hoanger',
+  dateStrings: 'date'
 });
 
 connection.connect(function(err){
@@ -114,22 +115,56 @@ app.get('/Profile/', function (req, res, next) {
   // console.log('Before SQL');
   // console.log(req.session);
   // console.log(req.session.username);
-    var sql = "SELECT * FROM Member WHERE Username = '" + req.session.username + "' ";
-    connection.query(sql, function( err, result, fields) {
-      if (result.length > 0) {
-        res.render('user', {
-          data: result,
-          loggedin: true
+  var query = "SELECT * FROM `Member` INNER JOIN Log ON Log.User_ID = Member.ID WHERE Member.Username = '" + req.session.username + "' ";
+  connection.query(query, function( log_err, log_res, log_fields) {
+    if (log_res.length > 0) {
+      res.render('user', {
+        log: true,
+        logdata: log_res
+      });
+    } else {
+      var sql = "SELECT * FROM Member WHERE Username = '" + req.session.username + "' ";
+      connection.query(sql, function( err, result, fields) {
+        if (result.length > 0) {
+        res.render('user',{
+          logdata: result
         });
-        // console.log('After SQL');
-      } else {
-        res.render('signup');
-      }
-    });
-});
+        } else {
+          res.render('signup');
+        }
+      });
+    };
+   });
+ });
+//     var sql = "SELECT * FROM Member WHERE Username = '" + req.session.username + "' ";
+//     connection.query(sql, function( err, result, fields) {
+//       // if (result.length > 0) {
+//       //   res.render('user', {
+//       //     data: result,
+//       //     loggedin: true
+//       //   });
+//       // } else {
+//       //   res.render('signup');
+//       // }
+//     });
+// });
 
 app.get('/user/', redirect404, function (req, res, next) {
-  res.render('user');
+    res.render('user');
+});
+
+app.post('/addLog', redirect404, function (req, res, next) {
+  var mysql = req.app.get('mysql');
+  var newDesc = req.body.logDesc;
+  var sql = "SELECT ID FROM Member WHERE Username = '" + req.session.username + "' ";
+  connection.query(sql, function( err, result, fields) {
+    var newID = result[0].ID;
+    console.log(newID);
+    var sql = "INSERT INTO `Log`( `Description`, `User_ID`) VALUES ('" + newDesc + "', '" + newID + "' )";
+    connection.query(sql, function( log_err, log_res, log_fields) {
+    });
+  });
+  res.render('log');
 });
 
 app.get('/tips/', function (req, res, next) {
@@ -183,7 +218,7 @@ app.post('/login', function(req, res) {
     }) ;
   });
 
-app.get('/logout', function(req, res, next) {
+app.get('/logout', redirect404, function(req, res, next) {
   if (req.session) {
     req.session.destroy(function(err) {
       if (err) {
