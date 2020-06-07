@@ -379,3 +379,42 @@ body {
   #modal-accept {
     margin-right: 20px;
   }
+
+.logTitle {
+  text-align: center;
+}
+
+.ls_form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.row {
+  display: flex;
+  flex-flow: row;
+}
+
+.row div:first-child {
+  margin-right: 20px;
+}
+
+.wrapper2 {
+text-align: center;
+}
+
+.wrapper2 a {
+  text-decoration: none;
+  color: black;
+  background-color: #f44336;
+  border: 1px solid #f44336;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.wrapper2 a:hover {
+  text-decoration: none;
+  color: black;
+  background-color: white;
+  border: 1px solid #f44336;
+}

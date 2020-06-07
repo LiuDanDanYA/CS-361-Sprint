@@ -36,6 +36,7 @@ function addNewFriend() {
   var aEmail = document.getElementById('email').value.trim();
   var aStat = document.getElementById('status');
   var opt = aStat.options[aStat.selectedIndex];
+  var check = document.getElementById('box').checked;
 
   aTele = aTele.replace(/(\d{3})(\d{3})(\d+)/, '$1-$2-$3');
 
@@ -46,12 +47,19 @@ function addNewFriend() {
   var cell4 = row.insertCell(3);
   var cell5 = row.insertCell(4);
   var cell6 = row.insertCell(5);
+  var cell7 = row.insertCell(6);
+
   cell1.innerHTML = aFirst;
   cell2.innerHTML = aLast;
   cell3.innerHTML = aTele;
   cell4.innerHTML = aEmail;
   cell5.innerHTML = opt.text;
-  cell6.innerHTML = "<button id='editbtn';>Edit</button>";
+  if (check == true) {
+    cell6.innerHTML = "<input type='checkbox'  id='box' checked></input>";
+  } else {
+    cell6.innerHTML = "<input type='checkbox'  id='box'></input>";
+  }
+  cell7.innerHTML = "<button id='editbtn';>Edit</button>";
   closeModal();
   clearAdd();
 }

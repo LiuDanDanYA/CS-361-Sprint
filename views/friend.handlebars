@@ -14,16 +14,18 @@
         <th>Edit</th>
       </tr>
     </thead>
+    {{#each data}}
     <tr>
-      <td>Bob</td>
-      <td>Smith</td>
-      <td>541-555-5525</td>
-      <td>bsmith@gmail.com</td>
-      <td>Heathy</td>
+      <td>{{this.FirstName}}</td>
+      <td>{{this.LastName}}</td>
+      <td>{{this.Telephone}}</td>
+      <td>{{this.Email}}</td>
+      <td>{{this.Status}}</td>
       <td><input type="checkbox"></td>
       <td><button class="editbtn">Edit</button></td>
     </tr>
-    <tr>
+    {{/each}}
+    <!-- <tr>
       <td>Jim</td>
       <td>Bob</td>
       <td>541-555-5523</td>
@@ -49,7 +51,7 @@
       <td>Heathy</td>
       <td><input type="checkbox"></td>
       <td><button class="editbtn">Edit</button></td>
-    </tr>
+    </tr> -->
   </table>
   <button type="button" id="add-Friend">Add Friend</button>
 </div>
