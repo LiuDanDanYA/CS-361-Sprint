@@ -4,7 +4,8 @@
   "description": "Team 33 KKB \r Team member: Xinpeng Liu\r              Yue Xu\r              Zhaoxiang Lai\r              Dongyi Sun\r              Eric Hoang",
   "main": "TestCommit.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
   },
   "repository": {
     "type": "git",
@@ -17,10 +18,19 @@
   },
   "homepage": "https://github.com/LiuDanDanYA/CS-361-Sprint#readme",
   "dependencies": {
+    "alert": "^5.0.0",
+    "body-parser": "^1.19.0",
+    "cookie-parser": "^1.4.5",
     "express": "^4.17.1",
+    "express-flash": "0.0.2",
     "express-handlebars": "^4.0.4",
     "express-session": "^1.17.1",
     "handlebars": "^4.7.6",
-    "mysql": "^2.18.1"
+    "mysql": "^2.18.1",
+    "nodemon": "^2.0.4",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0",
+    "popups": "^1.1.3",
+    "req-flash": "0.0.3"
   }
 }

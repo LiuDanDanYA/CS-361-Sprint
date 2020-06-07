@@ -1,0 +1,16 @@
+{{>header}}
+
+<div class="wrapper">
+  <div class="wrapper2">
+    {{#each data}}
+    <p>Welcome {{this.FirstName}} {{this.LastName}}!</p>
+    <div class="">
+      <p>Username: {{this.Username}}</p>
+      <p>Email: {{this.Email}}</p>
+    </div>
+    {{/each}}
+    <div>
+        <a href="/logout">Sign Out</a>
+    </div>
+  </div>
+</div>

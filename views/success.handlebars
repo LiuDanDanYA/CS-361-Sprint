@@ -1,0 +1,15 @@
+{{>header}}
+
+<div class="wrapper">
+  <div class="wrapper2">
+    <h3> Success </h3>
+      {{#if loggedin}}
+      <p>You Have Successfully Logged In!<p>
+        <a href="/logout">Sign Out</a>
+      {{else}}
+      <p>Thank you for signing up!<p>
+        <p>You may now login!</p>
+        <a href="/signup">Login</a>
+      {{/if}}
+  </div>
+</div>
