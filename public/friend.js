@@ -1,11 +1,9 @@
-
-
-
 var addFriend = document.getElementById('add-Friend');
 var backdrop = document.getElementById('modal-backdrop');
 var modal = document.getElementById('modal');
 var closeBtn = document.getElementById('modal-close');
 var acceptBtn = document.getElementById('modal-accept');
+var addlog = document.getElementById('addLog');
 
 addFriend.addEventListener('click', openModal);
 closeBtn.addEventListener('click', closeModal);
@@ -78,7 +76,6 @@ function handleAdd () {
     addNewFriend();
   }
 }
-
 
 function clearAdd() {
   postName = document.getElementById('firstName').value = "";

@@ -418,3 +418,20 @@ text-align: center;
   background-color: white;
   border: 1px solid #f44336;
 }
+
+#logTable {
+  width: 50%;
+}
+
+.log-container p {
+  margin: 0px;
+  margin-left: 20px;
+}
+
+#logadd {
+  border: 2px solid #f44336;
+  margin: 20px;
+  padding: 10px;
+  width: 500px;
+  text-align: left;
+}

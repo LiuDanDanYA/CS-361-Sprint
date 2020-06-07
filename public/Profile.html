@@ -21,29 +21,46 @@
       <a class="active" href="Profile.html">Profile</a>
       <a href="tips.html">Tips</a>
     </div>
-    <div align="center">
-    <br><br><br><br>
-    <h2>COVIDCoach</h2>
-    <div id="center">
-        <!--lgoin-->
-        <div class="login"  align="left">
-           <div class="login_line" style="margin-top:35px">
-                <div style="float:left;margin-left:10px">Username:</div>
-                <input type="text" style="width:140px;float:left;margin-left:10px"/>           
-           </div>
-           
-           <div class="login_line">
-                <div style="float:left;margin-left:10px">Password:</div>
-                <input type="password" style="width:140px;float:left;margin-left:10px"/>           
-           </div>
-           
-           <div class="login_line">
-                <input type="button" value="log in" style="width:60px;float:left;margin-left:10px"/>
-                <input type="button" value="sign in" style="width:60px;float:left;margin-left:10px"/>           
-           </div>
-           
+    <div class="wrapper">
+      <div class="wrapper2">
+        {{#each data}}
+        <p>Welcome {{this.FirstName}} {{this.LastName}}!</p>
+        <div class="">
+          <p>Username: {{this.Username}}</p>
+          <p>Email: {{this.Email}}</p>
         </div>
-        
-    </div> 
+        {{/each}}
+        <div>
+            <a href="/logout">Sign Out</a>
+        </div>
+      </div>
+      <div class='log'>
+        <div class="log-container">
+          <table id="logTable">
+            <thead>
+              <tr>
+                <th>Description</th>
+                <th>Date</th>
+                <th>Time</th>
+              </tr>
+            </thead>
+            {{#if log}}
+            {{#each logdata}}
+            <tr>
+              <td>{{this.Description}}</td>
+              <td>{{this.Date}}</td>
+              <td>{{this.Time}}</td>
+            </tr>
+            {{/each}}
+            {{else}}
+            <tr>
+              <td>No Entries to date.</td>
+              <td></td>
+              <td></td>
+            </tr>
+            {{/if}}
+          </table>
+        </div>
+      </div>
     </div>
   </header>

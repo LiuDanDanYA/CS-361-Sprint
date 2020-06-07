@@ -2,15 +2,51 @@
 
 <div class="wrapper">
   <div class="wrapper2">
-    {{#each data}}
-    <p>Welcome {{this.FirstName}} {{this.LastName}}!</p>
+    <p>Welcome {{logdata.[0].FirstName}} {{logdata.[0].LastName}}!</p>
     <div class="">
-      <p>Username: {{this.Username}}</p>
-      <p>Email: {{this.Email}}</p>
+      <p>Username: {{logdata.[0].Username}}</p>
+      <p>Email: {{logdata.[0].Email}}</p>
     </div>
-    {{/each}}
     <div>
         <a href="/logout">Sign Out</a>
     </div>
+    <!-- {{>log}} -->
+</div>
+<div class='log'>
+  <div class="log-container">
+    <h2>Log</h2>
+    <p>Add a Log</p>
+    <form id="logadd" action="/addLog" method="POST">
+      <label for="logDesc">Description</label>
+      <input type="text" name="logDesc" placeholder="Description" required>
+      <!-- <label for="logDate">Date</label>
+      <input type="date" id="logDate" name="logDate" placeholder="Date" required>
+      <label for="logTime">Time</label>
+      <input type="time" id="logTime" name="logTime" placeholder="Time" required> -->
+      <button id="addLog" type="submit" name="addLog">Add</button>
+    </form>
+    <table id="logTable">
+      <thead>
+        <tr>
+          <th>Description</th>
+          <th>Date</th>
+        </tr>
+      </thead>
+      {{#if log}}
+      {{#each logdata}}
+      <tr>
+        <td>{{this.Description}}</td>
+        <td>{{this.Date}}</td>
+      </tr>
+      {{/each}}
+      {{else}}
+      <tr>
+        <td>No Entries to date.</td>
+        <td></td>
+      </tr>
+      {{/if}}
+    </table>
   </div>
 </div>
+</div>
+</body>

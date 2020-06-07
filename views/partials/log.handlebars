@@ -1,0 +1,28 @@
+<div class='log'>
+  <div class="log-container">
+    <table id="logTable">
+      <thead>
+        <tr>
+          <th>Description</th>
+          <th>Date</th>
+          <th>Time</th>
+        </tr>
+      </thead>
+      {{#if log}}
+        {{#each logdata}}
+        <tr>
+          <td>{{this.Description}}</td>
+          <td>{{this.Date}}</td>
+          <td>{{this.Time}}</td>
+        </tr>
+        {{/each}}
+      {{else}}
+      <tr>
+        <td>No Entries to date.</td>
+        <td></td>
+        <td></td>
+      </tr>
+      {{/if}}
+    </table>
+  </div>
+</div>
